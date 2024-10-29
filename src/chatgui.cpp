@@ -1,11 +1,11 @@
 #include <wx/filename.h>
 #include <wx/colour.h>
 #include <wx/image.h>
+#include <iostream>
 #include <string>
 #include "chatbot.h"
 #include "chatlogic.h"
 #include "chatgui.h"
-
 // size of chatbot window
 const int width = 414;
 const int height = 736;
@@ -134,7 +134,7 @@ ChatBotPanelDialog::~ChatBotPanelDialog()
 {
     //// STUDENT CODE
     ////
-
+    std::cout << "ChatBotPanelDialog Destructor" << std::endl;
     delete _chatLogic;
 
     ////

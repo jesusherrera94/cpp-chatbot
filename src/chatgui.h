@@ -93,7 +93,7 @@ class ChatBotApp : public wxApp
 {
 public:
     // events
-    virtual bool OnInit();
+    virtual bool OnInit(); // called upon application startup
 };
 
 #endif /* CHATGUI_H_ */
