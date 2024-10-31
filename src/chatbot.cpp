@@ -66,10 +66,10 @@ ChatBot::ChatBot(ChatBot &&source)
 {
     std::cout << "ChatBot:::Move Constructor" << std::endl;
     _image = source._image;
-    source._image = nullptr;
     _chatLogic = source._chatLogic;
-    source._chatLogic = nullptr;
     _rootNode = source._rootNode;
+    source._chatLogic = nullptr;
+    source._image = nullptr;
     source._rootNode = nullptr;
 }
 
@@ -80,10 +80,10 @@ ChatBot &ChatBot::operator=(ChatBot &&source)
         return *this;
     delete _image;
     _image = source._image;
-    source._image = nullptr;
     _chatLogic = source._chatLogic;
-    source._chatLogic = nullptr;
     _rootNode = source._rootNode;
+    source._chatLogic = nullptr;
+    source._image = nullptr;
     source._rootNode = nullptr;
     return *this;
 }
