@@ -25,19 +25,18 @@ ChatBot::ChatBot(std::string filename)
     // invalidate data handles
     _chatLogic = nullptr;
     _rootNode = nullptr;
-
     // load image into heap memory
     _image = std::move(new wxBitmap(filename, wxBITMAP_TYPE_PNG));
 }
 
 ChatBot::~ChatBot()
 {
-    std::cout << "ChatBot Destructor " << this <<std::endl;
+    std::cout << "ChatBot Destructor mem:" << this <<std::endl;
 
     // deallocate heap memory
     if(_image != NULL || _image != nullptr) // Attention: wxWidgets used NULL and not nullptr
     {   
-        delete _image; // look why it is double free
+        delete _image; // double freed pointer
         _image = nullptr;
         _image = NULL;
     }

@@ -2,6 +2,9 @@
 #define CHATGUI_H_
 
 #include <wx/wx.h>
+#include <memory>
+using std::unique_ptr;
+using std::make_unique;
 
 class ChatLogic; // forward declaration
 
@@ -13,13 +16,8 @@ private:
     wxBoxSizer *_dialogSizer;
     wxBitmap _image;
 
-    //// STUDENT CODE
-    ////
+    unique_ptr<ChatLogic> _chatLogic;
 
-    ChatLogic *_chatLogic;
-
-    ////
-    //// EOF STUDENT CODE
 
 public:
     // constructor / destructor
@@ -27,7 +25,8 @@ public:
     ~ChatBotPanelDialog();
 
     // getter / setter
-    ChatLogic *GetChatLogicHandle() { return _chatLogic; }
+    // the usage of .get to access raw pointer and avoid no viable conversion error
+    ChatLogic *GetChatLogicHandle() { return _chatLogic.get(); }
 
     // events
     void paintEvent(wxPaintEvent &evt);
