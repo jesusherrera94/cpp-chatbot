@@ -19,15 +19,12 @@ private:
     
     std::vector<unique_ptr<GraphNode>> _nodes;
 
-    // data handles (not owned)
     GraphNode *_currentNode;
     ChatBot *_chatBot;
     ChatBotPanelDialog *_panelDialog;
 
-    // proprietary type definitions
     typedef std::vector<std::pair<std::string, std::string>> tokenlist;
 
-    // proprietary functions
     template <typename T>
     void AddAllTokensToElement(std::string tokenID, tokenlist &tokens, T &element);
 

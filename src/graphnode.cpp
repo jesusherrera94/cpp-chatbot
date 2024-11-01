@@ -8,13 +8,7 @@ GraphNode::GraphNode(int id)
 
 GraphNode::~GraphNode()
 {
-    //// STUDENT CODE
-    ////
-
-    // delete _chatBot; 
-
-    ////
-    //// EOF STUDENT CODE
+    
 }
 
 void GraphNode::AddToken(std::string token)
@@ -45,11 +39,5 @@ void GraphNode::MoveChatbotToNewNode(GraphNode *newNode)
 
 GraphEdge *GraphNode::GetChildEdgeAtIndex(int index)
 {
-    //// STUDENT CODE
-    ////
-
     return _childEdges[index].get();
-
-    ////
-    //// EOF STUDENT CODE
 }

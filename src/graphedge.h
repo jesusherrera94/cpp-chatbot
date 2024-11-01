@@ -4,18 +4,15 @@
 #include <vector>
 #include <string>
 
-class GraphNode; // forward declaration
+class GraphNode;
 
 class GraphEdge
 {
 private:
-    // data handles (not owned)
     GraphNode *_childNode;
     GraphNode *_parentNode;
-
-    // proprietary members
     int _id;
-    std::vector<std::string> _keywords; // list of topics associated with this edge
+    std::vector<std::string> _keywords;
     
 
 public:

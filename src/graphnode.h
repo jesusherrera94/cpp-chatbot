@@ -9,24 +9,17 @@
 
 using std::unique_ptr;
 using std::move;
-// forward declarations
+
 class GraphEdge;
 
 class GraphNode
 {
 private:
-    //// STUDENT CODE
-    ////
 
-    // data handles (owned)
     std::vector<unique_ptr<GraphEdge>> _childEdges;
 
-    // data handles (not owned)
-    std::vector<GraphEdge *> _parentEdges; // edges to preceding nodes 
+    std::vector<GraphEdge *> _parentEdges; 
     ChatBot _chatBot;
-
-    ////
-    //// EOF STUDENT CODE
 
     // proprietary members
     int _id;
