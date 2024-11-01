@@ -19,14 +19,6 @@ private:
     
     std::vector<unique_ptr<GraphNode>> _nodes;
 
-    //// STUDENT CODE
-    ////
-
-    std::vector<GraphEdge *> _edges; // going to change this to unique_ptr
-
-    ////
-    //// EOF STUDENT CODE
-
     // data handles (not owned)
     GraphNode *_currentNode;
     ChatBot *_chatBot;

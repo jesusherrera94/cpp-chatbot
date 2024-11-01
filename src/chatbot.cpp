@@ -31,13 +31,12 @@ ChatBot::ChatBot(std::string filename)
 
 ChatBot::~ChatBot()
 {
-    std::cout << "ChatBot Destructor mem:" << this <<std::endl;
+    std::cout << "ChatBot::Destructor memory allocation:" << this <<std::endl;
 
     // deallocate heap memory
     if(_image != NULL || _image != nullptr) // Attention: wxWidgets used NULL and not nullptr
     {   
         delete _image; // double freed pointer
-        _image = nullptr;
         _image = NULL;
     }
 }
@@ -134,8 +133,11 @@ void ChatBot::SetCurrentNode(GraphNode *node)
     std::uniform_int_distribution<int> dis(0, answers.size() - 1);
     std::string answer = answers.at(dis(generator));
 
+    _chatLogic->SetChatbotHandle(this);
+
     // send selected node answer to user
     _chatLogic->SendMessageToUser(answer);
+
 }
 
 int ChatBot::ComputeLevenshteinDistance(std::string s1, std::string s2)
