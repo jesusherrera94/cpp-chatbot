@@ -3,7 +3,10 @@
 
 #include <vector>
 #include <string>
+#include <memory>
 #include "chatgui.h"
+using std::unique_ptr;
+using std::make_unique;
 
 // forward declarations
 class ChatBot;
@@ -13,11 +16,12 @@ class GraphNode;
 class ChatLogic
 {
 private:
+    
+    std::vector<unique_ptr<GraphNode>> _nodes;
+
     //// STUDENT CODE
     ////
 
-    // data handles (owned)
-    std::vector<GraphNode *> _nodes;
     std::vector<GraphEdge *> _edges; // going to change this to unique_ptr
 
     ////
